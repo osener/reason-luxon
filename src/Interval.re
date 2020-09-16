@@ -51,7 +51,8 @@ let invalid = (~explanation=?, reason) => invalid(reason, explanation);
 [@bs.module "luxon"] [@bs.scope "Interval"]
 external isInterval: t => bool = "isInterval";
 
-[@bs.module "luxon"] [@bs.scope "Interval"] external merge: array(t) => t = "merge";
+[@bs.module "luxon"] [@bs.scope "Interval"]
+external merge: array(t) => t = "merge";
 
 [@bs.module "luxon"] [@bs.scope "Interval"]
 external xor: array(t) => array(t) = "xor";
@@ -77,7 +78,7 @@ external count:
   (
     t,
     option(
-      [@bs.string] [
+      [
         | `years
         | `quarters
         | `months
@@ -108,7 +109,7 @@ external difference: (t, array(t)) => bool = "difference";
 external hasSame:
   (
     t,
-    [@bs.string] [
+    [
       | `years
       | `quarters
       | `months
@@ -136,7 +137,7 @@ external hasSame:
 external length:
   (
     t,
-    [@bs.string] [
+    [
       | `years
       | `quarters
       | `months
@@ -178,7 +179,7 @@ external toDuration:
   (
     t,
     option(
-      [@bs.string] [
+      [
         | `years
         | `quarters
         | `months

@@ -49,7 +49,7 @@ let contains: (t, DateTime.t) => bool;
 
 let count:
   (
-    ~unit: [@bs.string] [
+    ~unit:  [
              | `years
              | `quarters
              | `months
@@ -76,7 +76,7 @@ let equals: (t, t) => bool;
 let hasSame:
   (
     t,
-    [@bs.string] [
+     [
       | `years
       | `quarters
       | `months
@@ -102,7 +102,7 @@ let isEmpty: t => bool;
 let length:
   (
     t,
-    [@bs.string] [
+     [
       | `years
       | `quarters
       | `months
@@ -130,7 +130,7 @@ let splitBy: (t, Duration.t) => array(t);
 let toDuration:
   (
     ~conversionAccuracy: ConversionAccuracy.t=?,
-    ~unit: [@bs.string] [
+    ~unit:  [
              | `years
              | `quarters
              | `months

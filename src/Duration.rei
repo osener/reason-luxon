@@ -81,7 +81,7 @@ external isDuration: t => bool = "isDuration";
 external as_:
   (
     t,
-    [@bs.string] [
+     [
       | `years
       | `quarters
       | `months
@@ -102,7 +102,7 @@ external as_:
 external get:
   (
     t,
-    [@bs.string] [
+     [
       | `years
       | `quarters
       | `months
@@ -123,7 +123,7 @@ external mapUnits:
     t,
     (
       float,
-      [@bs.string] [
+       [
         | `years
         | `quarters
         | `months
@@ -171,7 +171,7 @@ external shiftTo:
   (
     t,
     array(
-      [@bs.string] [
+       [
         | `years
         | `quarters
         | `months

@@ -276,7 +276,7 @@ let diff:
   (
     ~conversionAccuracy: ConversionAccuracy.t=?,
     ~units: array(
-              [@bs.string] [
+               [
                 | `years
                 | `quarters
                 | `months
@@ -298,7 +298,7 @@ let diffNow:
   (
     ~conversionAccuracy: ConversionAccuracy.t=?,
     ~units: array(
-              [@bs.string] [
+               [
                 | `years
                 | `quarters
                 | `months
@@ -318,7 +318,7 @@ let diffNow:
 let endOf:
   (
     t,
-    [@bs.string] [
+     [
       | `year
       | `month
       | `day
@@ -335,7 +335,7 @@ let equals: (t, t) => bool;
 let get:
   (
     t,
-    [@bs.string] [
+     [
       | `year
       | `month
       | `day
@@ -351,7 +351,7 @@ let hasSame:
   (
     t,
     t,
-    [@bs.string] [
+     [
       | `year
       | `month
       | `day
@@ -381,7 +381,7 @@ let reconfigure:
 let set:
   (
     t,
-    [@bs.string] [
+     [
       | `year
       | `month
       | `day
@@ -401,7 +401,7 @@ let setZone: (~keepLocalTime: bool=?, t, Zone.t) => t;
 external startOf:
   (
     t,
-    [@bs.string] [
+     [
       | `year
       | `month
       | `week
@@ -496,8 +496,8 @@ let toRelative:
     // It's illegal to use both round and padding, can we make this unrepresentable?
     ~padding: int=?,
     ~round: bool=?,
-    ~style: [@bs.string] [ | `long | `short | `narrow]=?,
-    ~unit: [@bs.string] [
+    ~style:  [ | `long | `short | `narrow]=?,
+    ~unit:  [
              | `year
              | `month
              | `day
@@ -516,7 +516,7 @@ let toRelativeCalendar:
     ~base: t=?,
     ~locale: string=?,
     ~numberingSystem: string=?,
-    ~unit: [@bs.string] [
+    ~unit:  [
              | `year
              | `month
              | `day

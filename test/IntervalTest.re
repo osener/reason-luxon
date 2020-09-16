@@ -11,8 +11,8 @@ describe("Interval", () => {
       );
 
     let end_ = start->DateTime.plus(Duration.make(~weeks=1.0, ()));
-    
+
     expect(Interval.fromDateTimes(start, end_)->Interval.toISO)
     |> toEqual("2006-01-30T23:59:59.999Z/2006-02-06T23:59:59.999Z");
-  });
+  })
 });

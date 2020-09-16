@@ -35,8 +35,7 @@ type options = {
 [@bs.send] external offsetName: (t, float, options) => string = "name";
 
 module IANA = {
-  /** https://moment.github.io/luxon/docs/class/src/zones/IANAZone.js~IANAZone.html */ 
-
+  /** https://moment.github.io/luxon/docs/class/src/zones/IANAZone.js~IANAZone.html */
   [@bs.module "luxon"] [@bs.scope "IANAZone"]
   external create: string => t = "create";
 
@@ -52,7 +51,6 @@ module IANA = {
 
 module FixedOffset = {
   /** https://moment.github.io/luxon/docs/class/src/zones/fixedOffsetZone.js~FixedOffsetZone.html */
-
   [@bs.module "luxon"] [@bs.scope "FixedOffsetZone"] [@bs.val]
   external utcInstance: t = "utcInstance";
 
@@ -62,26 +60,22 @@ module FixedOffset = {
   [@bs.module "luxon"] [@bs.scope "FixedOffsetZone"]
   external parseSpecifier: string => t = "parseSpecifier";
 
-  [@bs.send]
-  external formatOffset: t => string = "formatOffset";
+  [@bs.send] external formatOffset: t => string = "formatOffset";
 
-  [@bs.send]
-  external offset: t => int = "offset";
+  [@bs.send] external offset: t => int = "offset";
 
-  [@bs.send]
-  external offsetName: t => string = "offsetName";
+  [@bs.send] external offsetName: t => string = "offsetName";
 };
 [@bs.module "luxon"] [@bs.scope "FixedOffsetZone"] [@bs.val]
 external utc: t = "utcInstance";
 
 module Invalid = {
   /** https://moment.github.io/luxon/docs/class/src/zones/invalidZone.js~InvalidZone.html */
-  [@bs.module "luxon"]
-  [@bs.new] external make: unit => t = "InvalidZone";
+  [@bs.module "luxon"] [@bs.new]
+  external make: unit => t = "InvalidZone";
 };
 
-[@bs.module "luxon"] [@bs.new] 
-external invalid: unit => t = "InvalidZone";
+[@bs.module "luxon"] [@bs.new] external invalid: unit => t = "InvalidZone";
 
 module Local = {
   /** https://moment.github.io/luxon/docs/class/src/zones/localZone.js~LocalZone.html */

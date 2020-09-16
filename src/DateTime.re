@@ -192,15 +192,15 @@ let make =
       (),
     ) =>
   fromObject({
-    year, 
-    month, 
-    day, 
+    year,
+    month,
+    day,
     ordinal,
     weekYear,
     weekday,
-    hour, 
-    minute, 
-    second, 
+    hour,
+    minute,
+    second,
     millisecond,
     zone,
     locale,
@@ -329,7 +329,7 @@ external diff:
   (
     ~conversionAccuracy: ConversionAccuracy.t=?,
     ~units: array(
-              [@bs.string] [
+              [
                 | `years
                 | `quarters
                 | `months
@@ -353,7 +353,7 @@ external diffNow:
   (
     ~conversionAccuracy: ConversionAccuracy.t=?,
     ~units: array(
-              [@bs.string] [
+              [
                 | `years
                 | `quarters
                 | `months
@@ -373,18 +373,7 @@ external diffNow:
 
 [@bs.send]
 external endOf:
-  (
-    t,
-    [@bs.string] [
-      | `year
-      | `month
-      | `day
-      | `hour
-      | `minute
-      | `second
-      | `millisecond
-    ]
-  ) =>
+  (t, [ | `year | `month | `day | `hour | `minute | `second | `millisecond]) =>
   t =
   "endOf";
 
@@ -392,18 +381,7 @@ external endOf:
 
 [@bs.send]
 external get:
-  (
-    t,
-    [@bs.string] [
-      | `year
-      | `month
-      | `day
-      | `hour
-      | `minute
-      | `second
-      | `millisecond
-    ]
-  ) =>
+  (t, [ | `year | `month | `day | `hour | `minute | `second | `millisecond]) =>
   int =
   "get";
 
@@ -412,15 +390,7 @@ external hasSame:
   (
     t,
     t,
-    [@bs.string] [
-      | `year
-      | `month
-      | `day
-      | `hour
-      | `minute
-      | `second
-      | `millisecond
-    ]
+    [ | `year | `month | `day | `hour | `minute | `second | `millisecond]
   ) =>
   bool =
   "hasSame";
@@ -442,18 +412,7 @@ let reconfigure = (~locale=?, ~numberingSystem=?, ~outputCalendar=?, t) =>
 
 [@bs.send]
 external set:
-  (
-    t,
-    [@bs.string] [
-      | `year
-      | `month
-      | `day
-      | `hour
-      | `minute
-      | `second
-      | `millisecond
-    ]
-  ) =>
+  (t, [ | `year | `month | `day | `hour | `minute | `second | `millisecond]) =>
   int =
   "set";
 
@@ -470,7 +429,7 @@ let setZone = (~keepLocalTime=?, t, zone) =>
 external startOf:
   (
     t,
-    [@bs.string] [
+    [
       | `year
       | `month
       | `week
@@ -546,18 +505,10 @@ type toRelativeOptions = {
   numberingSystem: option(string),
   padding: option(int),
   round: option(bool),
-  style: option([@bs.string] [ | `long | `short | `narrow]),
+  style: option([ | `long | `short | `narrow]),
   unit:
     option(
-      [@bs.string] [
-        | `year
-        | `month
-        | `day
-        | `hour
-        | `minute
-        | `second
-        | `millisecond
-      ],
+      [ | `year | `month | `day | `hour | `minute | `second | `millisecond],
     ),
 };
 
@@ -586,15 +537,7 @@ type toRelativeCalendarOptions = {
   numberingSystem: option(string),
   unit:
     option(
-      [@bs.string] [
-        | `year
-        | `month
-        | `day
-        | `hour
-        | `minute
-        | `second
-        | `millisecond
-      ],
+      [ | `year | `month | `day | `hour | `minute | `second | `millisecond],
     ),
 };
 
