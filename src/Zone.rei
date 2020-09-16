@@ -13,13 +13,9 @@ type t;
 [@bs.send] external equals: (t, t) => bool = "name";
 
 module OffsetFormat: {
-  type t;
+  type t = [ | `long | `short ];
 
-  [@bs.inline "long"]
-  let long: t;
-
-  [@bs.inline "short"]
-  let short: t;
+  
 };
 
 [@bs.send]
@@ -28,7 +24,7 @@ external formatOffset: (t, float, OffsetFormat.t) => bool = "formatOffset";
 let offset: (t, float) => float;
 
 type options = {
-  format: string,
+  format: OffsetFormat.t,
   locale: string,
 };
 

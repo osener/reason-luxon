@@ -1,7 +1,2 @@
-type t;
+type t = [ |`casual | `longerm];
 
-[@bs.inline "casual"];
-let casual: t;
-
-[@bs.inline "longterm"];
-let longerm: t;
